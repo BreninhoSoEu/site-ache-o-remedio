@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onde Encontrar</title>
+    <link rel="stylesheet" href="css/busca.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <section class="resultados-container">
+        <h2 class="titulo-busca">Resultados da Busca</h2>
+        <div id="lista-resultados"></div>
+    </section>
+
+    <header class="topo">
+        <a href="index.html" class="voltar">←</a>
+        <h2>Onde encontrar</h2>
+        <span class="menu-opcoes">⋮</span>
+    </header>
+
+    <div id="map"></div>
+
+    <section class="lista">
+        <div class="item">
+            <div class="txt">
+                <h1>Rivotril</h1>
+                <p class="sub">clonazepam</p>
+                <p class="preco">R$34,90</p>
+            </div>
+            <div class="imagem"></div>
+        </div>
+
+        <div class="item">
+            <div class="txt">
+                <h1>Dipirona</h1>
+                <p class="sub">analgésico</p>
+                <p class="preco">R$12,50</p>
+            </div>
+            <div class="imagem"></div>
+        </div>
+
+        <div class="item">
+            <div class="txt">
+                <h1>Loratadina</h1>
+                <p class="sub">antialérgico</p>
+                <p class="preco">R$18,90</p>
+            </div>
+            <div class="imagem"></div>
+        </div>
+
+        <div class="item">
+            <div class="txt">
+                <h1>Vitamina C</h1>
+                <p class="sub">vitaminas</p>
+                <p class="preco">R$22,00</p>
+            </div>
+            <div class="imagem"></div>
+        </div>
+    </section>
+
+    <script>
+        const map = L.map('map').setView([0, 0], 15);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(pos => {
+                const lat = pos.coords.latitude;
+                const lon = pos.coords.longitude;
+                map.setView([lat, lon], 16);
+                L.marker([lat, lon]).addTo(map).bindPopup("Você está aqui").openPopup();
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AcheMemédio — Encontre remédios</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="top-hero">
+    <div class="hero-inner">
+      <div class="brand">
+        <div class="logo"><img src="img_memedio/logo.png" alt="logo"></div>
+        <h1>AcheMemédio</h1>
+      </div>
+      <div class="search">
+        <input id="searchInput" placeholder="Digite o nome do medicamento" />
+        <button id="searchBtn" aria-label="Pesquisar">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="categories">
+      <a href="busca.html" class="cat">
+        <div class="icon">📍</div>
+        <div class="label">Localização</div>
+      </a>
+      <a href="analgesicos.html" class="cat">
+        <div class="icon">💊</div>
+        <div class="label">Analgésicos</div>
+      </a>
+      <a href="reclamacao.html" class="cat">
+        <div class="icon">📤</div>
+        <div class="label">Reclame Aqui</div>
+      </a>
+      <a href="antialergicos.html" class="cat">
+        <div class="icon">🤧</div>
+        <div class="label">Antialérgicos</div>
+      </a>
+      <a href="vitaminas.html" class="cat">
+        <div class="icon">🧴</div>
+        <div class="label">Vitaminas</div>
+      </a>
+      <a href="dor-febre.html" class="cat">
+        <div class="icon">🤒</div>
+        <div class="label">Dor e febre</div>
+      </a>
+    </section>
+
+    <section class="results" id="results">
+    </section>
+  </main>
+
+  <nav class="bottom-nav" role="navigation" aria-label="Navegação principal">
+    <button class="nav-btn">🏠</button>
+    <a href="perfil.html" class="nav-btn">👤</a>
+  </nav>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
